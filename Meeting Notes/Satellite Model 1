@@ -1,0 +1,23 @@
+1. Building a Gas-Rich Dwarf Satellite
+I am loosely basing my model on IC1613 because Josh Simon has HI rotation curve data for that galaxy and it isn’t ridiculously teensy. According to Mateo (1998), distance is 700 kpc, although this may be a bit low (750 kpc in later papers?).
+1.1. Dark Matter Potential
+From Mateo ARAA (1998) tables:
+ρo = 0.035 M⊙ pc−2 = 2.37e-27 g cm−3 Which is the central mass density.
+Using the Burkert (1995) DM profile, this is all I need for everything else about the halo:
+ro = 1.5 kpc
+Mo = 1.84e8 M⊙ (The mass contained within ro) vc,max = 30 km/s
+This is not too bad in comparison to other data:
+Lake & Skillman (1989) observe a maximum rotation velocity of 25 km/s, but this may be a lower limit (according to Skillman et al. 2014).
+1.2. Stellar Potential
+Stellar mass 108 M⊙ (McConnachie 2012, via Skillman et al. 2014).
+From Mateo (1998), rexp = 5.4’ = 1.099 kpc
+According to McConnachie & Irwin (2006), the Plummer profile b ∼ 1.68re of the exponential profile, so b = 1.85 kpc. I am using a Plummer-Kuzmin disk (Miyamoto & Nagai 1975; MN75), so also need to choose an a. According to Mateo (1998) at large radius the ellipticity is 0.24, so based on eyeing figures in MN75 I choose a = 1.85 kpc too.
+I choose to use no bulge (well a 1 solar mass bulge), but that can change!
+–2–
+1.3. Gas Disk
+How flattened is the gas disk–does the major axis = minor axis?
+From Mateo (1998) MHI= 5.4e7 M⊙. In order to get N(H) at R = 0 of ∼3.2e20 cm−2, I need an a (R scale height) of 1.6 kpc. Then just randomly choose a b (z scale height) of 0.4 kpc.
+2. Surrounding IGM/CGM
+Right now I just need a low-density guess for static surrounding gas. I may have gone a bit too high-density, high-pressure.
+ρ= 1e-28 g cm−3
+T = 106 K
