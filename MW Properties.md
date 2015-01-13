@@ -6,3 +6,14 @@ M(<300kpc) = 2.7 +/- 0.5 x 10^12Msun
 
 # Gas profile:
 
+Miller & Bregman (2014; http://adsabs.harvard.edu/abs/2014arXiv1412.3116M)
+Based on detections of z = 0 OVII and OVIII absorption lines in quasar spectra and emission lines in blank-sky spectra. They fit a profile:
+
+n(r) ~ n_0 (r_c/r)^{3 beta}
+
+and find:
+
+n_0 r_c^{3 beta} = 1.35 +/- 0.24 cm^-3 kpc^{3 beta}
+
+beta = 0.50 +/- 0.03
+
