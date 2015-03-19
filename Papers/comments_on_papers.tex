@@ -11,6 +11,7 @@
 \hoffset=-0.6in
 
 \newcommand{\mnras}{{MNRAS}}
+\newcommand{\apj}{{ApJ}}
 
 \begin{document}
 
@@ -22,7 +23,33 @@
 \vskip 0.3cm
 
 \section{Nichols et al. 2011 (comments by Annika)}
-This paper \citep{nichols2011} presents a semi-analytic model for the stripping of neutral gas from dwarf galaxies orbiting the Milky Way.  
+This paper \citep{nichols2011} presents a semi-analytic model for the stripping of neutral gas from dwarf galaxies orbiting the Milky Way.  The orbits of dwarfs are initiated at $z=1$, $z=3$, or $z=10$ with orbital element distributions set by the requirement that surviving subhalos/satellites be at apogalacticon at $z=0$.  See Sec. 2.5 for details.  The key results are presented in Figs. 3-5: the amount of gas that survives at z=0 as a function of infall redshift, eccentricity/circularity, and perigalacticon.  See also Fig. 6 which suggests that stripping happens pretty quickly after infall in this model, which may be worrisome.  In general, if you look at Figs. 9-11 also, it seems like this model has too much stripping too soon.  This is addressed again in the \citet{nichols2012} paper in which they show a mechanism for hanging onto more gas for subsequent starbursts.
+
+\subsection{Model of the Milky Way host}
+
+The Milky Way is treated as a growing (see Eqs.  1, 4, and 5 ) Einasto dark-matter sphere.  This is described in Sec. 2.1.  The hot gas halo of the Milky Way is modeled as isothermal according to the contemporary virial temperature.  The description of the model can be found between Eqs. 21 and 22 in Sec. 2.3.  The model is tuned such that the central density of the halo is constant in time.  There is no stellar disk component in this model.
+
+\subsection{Model of the satellites}
+Satellites are also treated as Einasto spheres.  Their initial virial mass was set to $10^9 M_\odot$ except for the $z=10$ starts for which $M_{vir} = 3\times 10^8 M_\odot$.  I think the scale parameters are set according to Eqs. 4 \& 5, but this is never explicitly stated.  The satellites are initialized with $5\times 10^7 M_\odot$ in cold gas.  Cold gas is treated as having a constant density (!!!).  Satellites are initialized with 100 $M_\odot$ in each of a warm and hot phase.  The density profiles of those are treated according to Eq. 2 in the text---hydrostatic equilibrium.  The central density of the various gas components is treated according to the discussion at the very end of the preamble of Sec. 2.  Gases treated as being in pressure equilibrium.
+
+\subsection{Physics of interests and their implementation}
+Since the potential of the host is smooth, dynamical friction has to be treated as an additional force in the equations of motion for the satellites--see Eqs. 10 through 12.  These are set according to Zhao 2004.  
+
+The heating and cooling of gas is described in Sec. 2.2.  Briefly, the radiation fields of the host galaxy, satellite, and the extragalactic background are treated as sources
+
+\subsection{Thoughts on application to our project}
+
+\section{Nichols et al. 2012 (comments by Annika)}
+
+\subsection{Model of the Milky Way host}
+
+\subsection{Model of the satellites}
+
+\subsection{Physics of interest and implementation}
+
+\subsection{Thoughts on application to our project}
+
+
 
 
 \bibliography{../../Dropbox/latex/dmrefs}
