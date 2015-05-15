@@ -10,6 +10,8 @@ galaxies = galaxyDatabase.findall('galaxy')
 for galaxy in galaxies:
     name = galaxy.findall('name')[0]
     mass = galaxy.findall('massStellar')
-    if len(mass) > 0:
+    dynamical = galaxy.findall('massDynamicalHalfLightRadius')
+    if len(mass) > 0 and len(dynamical) > 0:
         massValue = mass[0].findall('value')[0]
-        print name.text,massValue.text
+        dynamicalValue = dynamical[0].findall('value')[0]
+        print massValue.text,dynamicalValue.text,name.text
