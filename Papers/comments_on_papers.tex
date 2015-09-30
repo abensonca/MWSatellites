@@ -1,0 +1,62 @@
+\documentclass[11pt,longbibliography]{article}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{verbatim} % for comment env.
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+
+\textwidth=6.5in
+\textheight=9.0in
+\voffset=-0.8in
+\hoffset=-0.6in
+
+\newcommand{\mnras}{{MNRAS}}
+\newcommand{\apj}{{ApJ}}
+
+\begin{document}
+
+\noindent
+\begin{centering}
+\centerline{\Large{Comments on relevant papers}}\newline
+%\centerline{Annika Peter, 3/13/2015}
+\end{centering}
+\vskip 0.3cm
+
+\section{Nichols et al. 2011 (comments by Annika)}
+This paper \citep{nichols2011} presents a semi-analytic model for the stripping of neutral gas from dwarf galaxies orbiting the Milky Way.  The orbits of dwarfs are initiated at $z=1$, $z=3$, or $z=10$ with orbital element distributions set by the requirement that surviving subhalos/satellites be at apogalacticon at $z=0$.  See Sec. 2.5 for details.  The key results are presented in Figs. 3-5: the amount of gas that survives at z=0 as a function of infall redshift, eccentricity/circularity, and perigalacticon.  See also Fig. 6 which suggests that stripping happens pretty quickly after infall in this model, which may be worrisome.  In general, if you look at Figs. 9-11 also, it seems like this model has too much stripping too soon.  This is addressed again in the \citet{nichols2012} paper in which they show a mechanism for hanging onto more gas for subsequent starbursts.
+
+\subsection{Model of the Milky Way host}
+
+The Milky Way is treated as a growing (see Eqs.  1, 4, and 5 ) Einasto dark-matter sphere.  This is described in Sec. 2.1.  The hot gas halo of the Milky Way is modeled as isothermal according to the contemporary virial temperature.  The description of the model can be found between Eqs. 21 and 22 in Sec. 2.3.  The model is tuned such that the central density of the halo is constant in time.  There is no stellar disk component in this model.
+
+\subsection{Model of the satellites}
+Satellites are also treated as Einasto spheres.  Their initial virial mass was set to $10^9 M_\odot$ except for the $z=10$ starts for which $M_{vir} = 3\times 10^8 M_\odot$.  I think the scale parameters are set according to Eqs. 4 \& 5, but this is never explicitly stated.  The satellites are initialized with $5\times 10^7 M_\odot$ in cold gas.  Cold gas is treated as having a constant density (!!!).  Satellites are initialized with 100 $M_\odot$ in each of a warm and hot phase.  The density profiles of those are treated according to Eq. 2 in the text---hydrostatic equilibrium.  The central density of the various gas components is treated according to the discussion at the very end of the preamble of Sec. 2.  Gases treated as being in pressure equilibrium.
+
+\subsection{Physics of interests and their implementation}
+Since the potential of the host is smooth, dynamical friction has to be treated as an additional force in the equations of motion for the satellites--see Eqs. 10 through 12.  These are set according to Zhao 2004.  
+
+The heating and cooling of gas is described in Sec. 2.2 and 2.4.  Briefly, the radiation fields of the host galaxy, satellite, and the extragalactic background are treated as sources of ionization and heat.  The radiation field of the MW is modeled according to Eqs. 13 and 14.  This seems to be the sort of thing that we could probably model more self-consistently with Galacticus.  Cooling is metal-line cooling from Schure et al. 2009 and Dalgarno and McCray 1972.  The radiation from the dwarfs is modeled according to Eqs. 23 and 24, where the SFR is calibrated to the atomic-to-SFR formation found for M31 dwarfs (Kaisin \& Karachentsev 2006) and the radiation field is calculated with Starburst99.  The heating and cooling equations for the cold and warm gas are given in Eq. 17.  For non-bursty SF, the power of supernova is given in Eq. 25.  The energy from the supernova goes solely into heating a fraction of the cold and warm gas to a 10$^6$ K hot halo for the dwarfs, given in Eq. 29.  For bursty SF, the power of supernova is estimated using Eqs. 26 through 28.  Note that it does not go into momentum- or energy-driven winds at all.  All of these are things we could could probably model better and/or more self-consistently with intuition from Adi's simulations. 
+
+Analytic expressions are used for the tidal radius and ram-pressure stripping criterion.  The tidal radius used is given by Eq. 18 and is from Hayashi et al. 2003.  The ram-pressure-stripping criterion is taken from McCarthy et al. (2008) (Eq. 19), and the rate of mass loss is given by Eq. 22.
+
+They claim that most of the gas removed in the dwarfs is gas in the warm phase that extends outside the tidal radius.
+
+\subsection{Thoughts on application to our project}
+
+A lot of the ingredients are here, but I suspect that we can do better by calibrating SAM models to Adi and Stephanie's simulations.  Adi's will be important for seeing how gas moves between phases and out of the tidal radius.  Stephanie's will be good for calibrating the effects of RPS.  It should be noted that Nichols \& Bland-Hawthorn say that their RPS model does not appear to be in good agreement with the simulations that existed at the time.
+
+\section{Nichols et al. 2012 (comments by Annika)}
+
+This is a follow-up to \citet{nichols2011}.  In this paper, the authors point out that the tidal radius is smaller at perigalacticon than apogalacticon.  They claim that gas clouds stripped at perigalacticon can cool and be reaccreted by satellites at apogalacticon.  They treat gas clouds as being on ballistic orbits.  They claim that this reaccretion can drive bursts at apogalacticon.
+
+
+\subsection{Thoughts on application to our project}
+The claims seem somewhat dubious to me, to be honest.  But it also seems like the sort of thing we can look for in Stephanie and Adi's simulations.  Can gas clouds really survive that long?  How does gas flow in and out of the tidal radius during the dwarf's orbit?
+
+
+
+\bibliography{../../Dropbox/latex/dmrefs}
+\bibliographystyle{apsrev}
+
+
+\end{document}
